@@ -5,17 +5,17 @@ from typing import Annotated
 
 from fastapi import APIRouter, BackgroundTasks, Depends, Request, HTTPException
 from fastapi.security.http import HTTPBase
-from supportai.concept_management.create_concepts import (
+from app.supportai.concept_management.create_concepts import (
     CommunityConceptCreator, EntityConceptCreator, HigherLevelConceptCreator,
     RelationshipConceptCreator)
-from supportai.retrievers import (EntityRelationshipRetriever,
+from app.supportai.retrievers import (EntityRelationshipRetriever,
                                   HNSWOverlapRetriever, HNSWRetriever,
                                   HNSWSiblingRetriever)
 
-from common.config import (db_config, embedding_service, embedding_store,
+from app.common_copy.config import (db_config, embedding_service, embedding_store,
                            get_llm_service, llm_config, service_status)
-from common.logs.logwriter import LogWriter
-from common.py_schemas.schemas import (CoPilotResponse, CreateIngestConfig,
+from app.common_copy.logs.logwriter import LogWriter
+from app.common_copy.py_schemas.schemas import (CoPilotResponse, CreateIngestConfig,
                                        LoadingInfo, SupportAIQuestion)
 
 logger = logging.getLogger(__name__)

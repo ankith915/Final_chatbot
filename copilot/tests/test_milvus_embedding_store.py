@@ -3,7 +3,7 @@ import os
 import unittest
 from unittest.mock import patch, MagicMock
 
-from common.embeddings.milvus_embedding_store import MilvusEmbeddingStore
+from common1.embeddings.milvus_embedding_store import MilvusEmbeddingStore
 from langchain_core.documents import Document
 
 class TestMilvusEmbeddingStore(unittest.TestCase):

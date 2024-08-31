@@ -1,5 +1,5 @@
 import unittest
-from common.chunkers.character_chunker import CharacterChunker
+from common1.chunkers.character_chunker import CharacterChunker
 
 
 class TestCharacterChunker(unittest.TestCase):

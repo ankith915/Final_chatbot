@@ -5,14 +5,14 @@ from langchain.chains import LLMChain
 from langchain.prompts import PromptTemplate
 from langchain.output_parsers import PydanticOutputParser
 from langchain.pydantic_v1 import BaseModel, Field, validator
-from common.metrics.tg_proxy import TigerGraphConnectionProxy
-from common.py_schemas import MapQuestionToSchemaResponse, MapAttributeToAttributeResponse
+from app.common_copy.metrics.tg_proxy import TigerGraphConnectionProxy
+from app.common_copy.py_schemas import MapQuestionToSchemaResponse, MapAttributeToAttributeResponse
 from typing import List, Dict
 from .validation_utils import validate_schema, MapQuestionToSchemaException
 import re
 import logging
-from common.logs.log import req_id_cv
-from common.logs.logwriter import LogWriter
+from app.common_copy.logs.log import req_id_cv
+from app.common_copy.logs.logwriter import LogWriter
 
 logger = logging.getLogger(__name__)
 

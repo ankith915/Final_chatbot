@@ -1,7 +1,7 @@
-from common.embeddings.embedding_services import EmbeddingModel
-from common.embeddings.base_embedding_store import EmbeddingStore
-from common.metrics.tg_proxy import TigerGraphConnectionProxy
-from common.llm_services.base_llm import LLM_Model
+from app.common_copy.embeddings.embedding_services import EmbeddingModel
+from app.common_copy.embeddings.base_embedding_store import EmbeddingStore
+from app.common_copy.metrics.tg_proxy import TigerGraphConnectionProxy
+from app.common_copy.llm_services.base_llm import LLM_Model
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.prompts import ChatPromptTemplate
 

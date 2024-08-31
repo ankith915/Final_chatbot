@@ -10,12 +10,12 @@ from langchain.pydantic_v1 import BaseModel, Field, validator
 from langchain.tools import BaseTool
 from langchain.tools.base import ToolException
 
-from common.embeddings.base_embedding_store import EmbeddingStore
-from common.embeddings.embedding_services import EmbeddingModel
-from common.logs.log import req_id_cv
-from common.logs.logwriter import LogWriter
-from common.metrics.tg_proxy import TigerGraphConnectionProxy
-from common.py_schemas import GenerateFunctionResponse, MapQuestionToSchemaResponse
+from app.common_copy.embeddings.base_embedding_store import EmbeddingStore
+from app.common_copy.embeddings.embedding_services import EmbeddingModel
+from app.common_copy.logs.log import req_id_cv
+from app.common_copy.logs.logwriter import LogWriter
+from app.common_copy.metrics.tg_proxy import TigerGraphConnectionProxy
+from app.common_copy.py_schemas import GenerateFunctionResponse, MapQuestionToSchemaResponse
 
 from .validation_utils import (
     InvalidFunctionCallException,

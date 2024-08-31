@@ -84,7 +84,7 @@ langsmith==0.1.94
 lomond==0.3.3
 lxml==4.9.3
 marshmallow==3.20.1
-matplotlib==3.9.1
+#matplotlib==3.9.1
 minio==7.2.5
 multidict==6.0.4
 mypy-extensions==1.0.0
@@ -146,7 +146,7 @@ ujson==5.9.0
 unstructured==0.10.23
 urllib3==1.26.18
 uvicorn==0.23.2
-uvloop==0.17.0
+#uvloop==0.17.0
 validators==0.22.0
 wandb==0.15.12
 watchfiles==0.20.0

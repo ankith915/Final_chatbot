@@ -5,14 +5,14 @@ from typing import Annotated
 from fastapi import APIRouter, Request, Depends
 from fastapi.security.http import HTTPBase
 
-from common.config import get_llm_service, llm_config
-from common.logs.log import req_id_cv
-from common.py_schemas.schemas import (
+from app.common_copy.config import get_llm_service, llm_config
+from app.common_copy.logs.log import req_id_cv
+from app.common_copy.py_schemas.schemas import (
     CoPilotResponse,
     NaturalLanguageQuery
 )
-from tools import GenerateCypher
-from common.logs.logwriter import LogWriter
+from app.tools import GenerateCypher
+from app.common_copy.logs.logwriter import LogWriter
 
 logger = logging.getLogger(__name__)
 router = APIRouter(tags=["QueryAI"])

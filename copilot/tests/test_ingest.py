@@ -1,7 +1,7 @@
 import unittest
 from unittest.mock import patch, MagicMock
 from app.supportai.supportai_ingest import BatchIngestion
-from common.status import IngestionProgress
+from common1.status import IngestionProgress
 
 
 class TestBatchIngestion(unittest.TestCase):

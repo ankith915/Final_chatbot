@@ -4,17 +4,17 @@ import os
 import traceback
 from typing import Annotated, List, Union
 
-from agent.agent import make_agent
+from app.agent.agent import make_agent
 from fastapi import (APIRouter, Depends, HTTPException, Request, 
                      status)
 from fastapi.security.http import HTTPBase
-from tools.validation_utils import MapQuestionToSchemaException
+from app.tools.validation_utils import MapQuestionToSchemaException
 
-from common.config import embedding_service, embedding_store, session_handler, service_status
-from common.logs.log import req_id_cv
-from common.logs.logwriter import LogWriter
-from common.metrics.prometheus_metrics import metrics as pmetrics
-from common.py_schemas.schemas import (CoPilotResponse, GSQLQueryInfo,
+from app.common_copy.config import embedding_service, embedding_store, session_handler, service_status
+from app.common_copy.logs.log import req_id_cv
+from app.common_copy.logs.logwriter import LogWriter
+from app.common_copy.metrics.prometheus_metrics import metrics as pmetrics
+from app.common_copy.py_schemas.schemas import (CoPilotResponse, GSQLQueryInfo,
                                        GSQLQueryList, NaturalLanguageQuery,
                                        QueryDeleteRequest, QueryUpsertRequest)
 

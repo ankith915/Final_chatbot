@@ -1,6 +1,6 @@
-from supportai.retrievers import BaseRetriever
-from common.extractors import LLMEntityRelationshipExtractor
-from common.metrics.tg_proxy import TigerGraphConnectionProxy
+from app.supportai.retrievers import BaseRetriever
+from app.common_copy.extractors import LLMEntityRelationshipExtractor
+from app.common_copy.metrics.tg_proxy import TigerGraphConnectionProxy
 
 
 class EntityRelationshipRetriever(BaseRetriever):

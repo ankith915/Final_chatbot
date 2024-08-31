@@ -1,5 +1,5 @@
 import unittest
-from common.chunkers.regex_chunker import RegexChunker
+from common1.chunkers.regex_chunker import RegexChunker
 
 
 class TestRegexChunker(unittest.TestCase):

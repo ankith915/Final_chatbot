@@ -4,27 +4,39 @@ import time
 import uuid
 from base64 import b64decode
 from datetime import datetime
-
-import routers
+import os  # Add this import
+ 
+from dotenv import load_dotenv  # Add this import
+from app import routers
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.responses import JSONResponse
 from fastapi.security import HTTPBasicCredentials
 from starlette.middleware.cors import CORSMiddleware
+ 
+from app.common_copy.config import PATH_PREFIX, PRODUCTION
+from app.common_copy.db.connections import (get_db_connection_id_token,
+                                            get_db_connection_pwd)
+from app.common_copy.logs.log import req_id_cv
+from app.common_copy.logs.logwriter import LogWriter
+from app.common_copy.metrics.prometheus_metrics import metrics as pmetrics
+ 
+# Load environment variables from .env file
+load_dotenv()  # Add this line
+ 
+# Now you can access the environment variables like this:
+langchain_tracing_v2 = os.getenv("LANGCHAIN_TRACING_V2")
+langchain_api_key = os.getenv("LANGCHAIN_API_KEY")
+openai_api_key = os.getenv("OPENAI_API_KEY")
 
-from common.config import PATH_PREFIX, PRODUCTION
-from common.db.connections import (get_db_connection_id_token,
-                                   get_db_connection_pwd)
-from common.logs.log import req_id_cv
-from common.logs.logwriter import LogWriter
-from common.metrics.prometheus_metrics import metrics as pmetrics
-
+ 
+# You can now use these variables in your script or application setup
 if PRODUCTION:
     app = FastAPI(
         title="TigerGraph CoPilot", docs_url=None, redoc_url=None, openapi_url=None
     )
 else:
     app = FastAPI(title="TigerGraph CoPilot")
-
+ 
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -32,14 +44,13 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
+ 
 app.include_router(routers.root_router, prefix=PATH_PREFIX)
 app.include_router(routers.inquiryai_router, prefix=PATH_PREFIX)
 app.include_router(routers.supportai_router, prefix=PATH_PREFIX)
 app.include_router(routers.queryai_router, prefix=PATH_PREFIX)
 app.include_router(routers.ui_router, prefix=PATH_PREFIX)
-
-
+ 
 excluded_metrics_paths = ("/docs", "/openapi.json", "/metrics")
 
 logger = logging.getLogger(__name__)

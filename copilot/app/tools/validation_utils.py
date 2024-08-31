@@ -5,8 +5,8 @@ Used to verify that the tools correctly mapped questions to valid schema element
 """
 
 import logging
-from common.logs.log import req_id_cv
-from common.logs.logwriter import LogWriter
+from app.common_copy.logs.log import req_id_cv
+from app.common_copy.logs.logwriter import LogWriter
 
 logger = logging.getLogger(__name__)
 

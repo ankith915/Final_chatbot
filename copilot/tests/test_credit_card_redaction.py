@@ -1,7 +1,7 @@
 import re
 import unittest
 
-from common.logs.logwriter import LogWriter
+from common1.logs.logwriter import LogWriter
 
 class TestCreditCardRedaction(unittest.TestCase):
     def setUp(self):

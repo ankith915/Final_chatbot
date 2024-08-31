@@ -3,7 +3,7 @@ from langchain_core.output_parsers import StrOutputParser
 from langchain.prompts import PromptTemplate
 from langchain.tools import BaseTool
 from langchain.llms.base import LLM
-from common.metrics.tg_proxy import TigerGraphConnectionProxy
+from app.common_copy.metrics.tg_proxy import TigerGraphConnectionProxy
 
 logger = logging.getLogger(__name__)
 

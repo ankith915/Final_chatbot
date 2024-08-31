@@ -3,15 +3,15 @@ import json
 import time
 from typing import Dict, List
 
-from agent.agent_graph import TigerGraphAgentGraph
-from agent.Q import Q
+from app.agent.agent_graph import TigerGraphAgentGraph
+from app.agent.Q import Q
 from fastapi import WebSocket
-from tools import GenerateCypher, GenerateFunction, MapQuestionToSchema
+from app.tools import GenerateCypher, GenerateFunction, MapQuestionToSchema
 
-from common.config import embedding_service, embedding_store, llm_config
-from common.embeddings.base_embedding_store import EmbeddingStore
-from common.embeddings.embedding_services import EmbeddingModel
-from common.llm_services import (
+from app.common_copy.config import embedding_service, embedding_store, llm_config
+from app.common_copy.embeddings.base_embedding_store import EmbeddingStore
+from app.common_copy.embeddings.embedding_services import EmbeddingModel
+from app.common_copy.llm_services import (
     AWS_SageMaker_Endpoint,
     AWSBedrock,
     AzureOpenAI,
@@ -22,11 +22,11 @@ from common.llm_services import (
     OpenAI,
     IBMWatsonX
 )
-from common.llm_services.base_llm import LLM_Model
-from common.logs.log import req_id_cv
-from common.logs.logwriter import LogWriter
-from common.metrics.prometheus_metrics import metrics
-from common.metrics.tg_proxy import TigerGraphConnectionProxy
+from app.common_copy.llm_services.base_llm import LLM_Model
+from app.common_copy.logs.log import req_id_cv
+from app.common_copy.logs.logwriter import LogWriter
+from app.common_copy.metrics.prometheus_metrics import metrics
+from app.common_copy.metrics.tg_proxy import TigerGraphConnectionProxy
 
 logger = logging.getLogger(__name__)
 

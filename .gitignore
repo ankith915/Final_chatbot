@@ -1,11 +1,9 @@
 .env
 __pycache__/
-*_config*.json
 tigergraph-ml-*.json
 wandb/
 report_url.txt
 volumes/*
-configs/SERVICE_ACCOUNT_CREDS.json
 npm-debug.log
 .vscode/*
 udfs/milvus/venv/*
@@ -31,9 +29,11 @@ volumes
 build/
 /k8s
 run.sh
-configs
 venv
+configs
+copilot/configs
 .env
+TigerGraph
 
 hld
 times*

@@ -6,7 +6,7 @@ from fastapi.responses import FileResponse, HTMLResponse
 from fastapi.security import HTTPBasic, HTTPBasicCredentials
 from pymilvus import connections, utility
 
-from common.config import llm_config, service_status
+from app.common_copy.config import llm_config, service_status
 
 logger = logging.getLogger(__name__)
 router = APIRouter()

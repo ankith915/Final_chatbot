@@ -3,7 +3,7 @@ import logging
 import os
 import json
 from unittest.mock import call, patch, MagicMock
-from common.logs.logwriter import LogWriter
+from common1.logs.logwriter import LogWriter
 
 
 class TestLogWriter(unittest.TestCase):

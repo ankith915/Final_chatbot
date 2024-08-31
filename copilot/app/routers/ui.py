@@ -11,8 +11,8 @@ from typing import Annotated
 import asyncer
 import httpx
 import requests
-from agent.agent import TigerGraphAgent, make_agent
-from agent.Q import DONE
+from app.agent.agent import TigerGraphAgent, make_agent
+from app.agent.Q import DONE
 from fastapi import (
     APIRouter,
     Depends,
@@ -23,14 +23,14 @@ from fastapi import (
 )
 from fastapi.security import HTTPBasic, HTTPBasicCredentials
 from pyTigerGraph import TigerGraphConnection
-from tools.validation_utils import MapQuestionToSchemaException
+from app.tools.validation_utils import MapQuestionToSchemaException
 
-from common.config import db_config, embedding_service, llm_config, service_status
-from common.db.connections import get_db_connection_pwd_manual
-from common.logs.log import req_id_cv
-from common.logs.logwriter import LogWriter
-from common.metrics.prometheus_metrics import metrics as pmetrics
-from common.py_schemas.schemas import (
+from app.common_copy.config import db_config, embedding_service, llm_config, service_status
+from app.common_copy.db.connections import get_db_connection_pwd_manual
+from app.common_copy.logs.log import req_id_cv
+from app.common_copy.logs.logwriter import LogWriter
+from app.common_copy.metrics.prometheus_metrics import metrics as pmetrics
+from app.common_copy.py_schemas.schemas import (
     AgentProgess,
     CoPilotResponse,
     Message,
